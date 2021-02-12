@@ -1,18 +1,15 @@
 function findPrime(string) {
   let str = string.split(' ');
-//   console.log(str);
   if (str[0] < 0 || str[1] < 0) {
-//       console.log('hi', str[0]);
-
     throw 'Please provide a positive number as negative integers cannot be prime'
+  }
+  if (str[1] <= str[0]) {
+    throw 'Parameter range incorrect';
   }
   
   let primeList = [];
-  
-  let highestOccurringDigit; 
-    
+      
   for (let i = +str[0]; i <= +str[1]; i++) {
-//     console.log(i);
     if (i === 2) {
       primeList.push(2);
     }
@@ -64,12 +61,8 @@ function findPrime(string) {
        count = 1;
     }
   }
-//     console.log(primeList);
 
-//   console.log('obj', obj);
-
-  highestOccurringDigit = Object.keys(obj).reduce((current, previous) => obj[previous] > obj[current] ? previous : current);
-//     highestOccurringDigit = Object.keys(obj).reduce((current, previous) => Math.max(current, previous));
+  const highestOccurringDigit = Object.keys(obj).reduce((current, previous) => obj[previous] > obj[current] ? previous : current);
 
   return +highestOccurringDigit;
 }
