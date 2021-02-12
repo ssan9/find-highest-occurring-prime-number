@@ -41,7 +41,7 @@ function findPrime(string) {
   }
   
     
-    console.log(primeList);
+    // console.log(primeList);
   
   if(!primeList || !primeList.length) {
     return 'No prime numbers found';
@@ -68,29 +68,9 @@ function findPrime(string) {
   }
 //     console.log(primeList);
 
-  console.log('obj', obj);
-
-//   highestOccurringDigit = Object.keys(obj).reduce((current, next) => {
-//     console.log('cur', current, 'nex', next);
-// //     return obj[next] > obj[current] ? next : current
-//     if (obj[next] > obj[current]) {
-//       console.log('next', obj[next]);
-//       return next;
-//     }
-//     console.log('current', obj[current]);
-//     return current;
-//   });
+  // console.log('obj', obj);
   
-   highestOccurringDigit = Object.keys(obj).reduce((current, next) => {
-//     console.log('cur', current, 'nex', next);
-//     return obj[next] > obj[current] ? next : current
-    if (obj[next] < obj[current]) {
-//       console.log('next', obj[next]);
-      return current;
-    }
-//     console.log('current', obj[current]);
-    return next;
-  });
+  highestOccurringDigit = Object.keys(obj).reduce((current, next) => obj[next] < obj[current] ? current : next);
   
   
 //     highestOccurringDigit = Object.keys(obj).reduce((current, previous) => Math.max(current, previous));
