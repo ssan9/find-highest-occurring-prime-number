@@ -1,4 +1,4 @@
-## florence-coding-challenge
+## Algorithm - Find highest occurring prime number
 
 ## Introduction
 
