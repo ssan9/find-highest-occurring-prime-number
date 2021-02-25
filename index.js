@@ -2,7 +2,6 @@ let arguments = process.argv;
 
 function findPrime(string, myCallback1, myCallback2, myCallback3) {
   let str = string.split(' ');
-  
   if (+str[0] < 0 || +str[1] < 0) {
     return 'Please provide a positive integer as negative integers cannot be prime';
   }
@@ -37,7 +36,6 @@ function createPrimeList(str, myCallback1, myCallback2) {
 
   return myCallback1(primeList, myCallback2);
 }
-   
 
 function findDigitOccurrences(primeList, myCallback) {
   let digitOccurrences = primeList.join('').split('').sort();
@@ -59,15 +57,13 @@ function findDigitOccurrences(primeList, myCallback) {
 const highestOccurringDigit = obj => Object.keys(obj).reduce((current, next) => obj[next] < obj[current] ? +current : +next);
 
  
-console.log(findPrime("1 10", createPrimeList, findDigitOccurrences, highestOccurringDigit));
-
+// console.log(findPrime("1 18", createPrimeList, findDigitOccurrences, highestOccurringDigit));
 
 
 // The following code will help to read command line arguments   
-// let primeNumber = findPrime(arguments[2], arguments[3]);
-// let prime =   findPrime(createPrimeList, findDigitOccurrences, highestOccurringDigit);
+let primeNumber = findPrime(arguments[2], createPrimeList, findDigitOccurrences, highestOccurringDigit);
+console.log('Result:', primeNumber);
 
-// console.log('Result:', primeNumber + prime);
 
 // Alternate method - It's mostly the same, the only difference is that the arrow function is incorporated in the
 // regular function itself.
