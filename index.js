@@ -1,3 +1,4 @@
+// modularized code 
 let arguments = process.argv; 
 
 function findPrime(string, myCallback1, myCallback2, myCallback3) {
